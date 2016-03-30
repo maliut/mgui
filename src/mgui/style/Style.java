@@ -23,6 +23,10 @@ public class Style {  // 设置和设置的主体分离，可复用
 		
 	}
 	
+	public static Style create() {
+		return create(EMPTY);
+	}
+	
 	public static Style create(int base) {
 		Style ret = new Style();
 		switch (base) {
@@ -68,6 +72,79 @@ public class Style {  // 设置和设置的主体分离，可复用
 		// let it show
 		jme.setVisible(true);
 		parent.add(jme);
+		parent.repaint();
+	}
+
+	public Boolean getOpaque() {
+		return opaque;
+	}
+
+	public void setOpaque(Boolean opaque) {
+		this.opaque = opaque;
+	}
+
+	public Boolean getBorderPainted() {
+		return borderPainted;
+	}
+
+	public void setBorderPainted(Boolean borderPainted) {
+		this.borderPainted = borderPainted;
+	}
+
+	public Boolean getContentAreaFilled() {
+		return contentAreaFilled;
+	}
+
+	public void setContentAreaFilled(Boolean contentAreaFilled) {
+		this.contentAreaFilled = contentAreaFilled;
+	}
+
+	public Color getBackground() {
+		return background;
+	}
+
+	public void setBackground(Color background) {
+		this.background = background;
+	}
+
+	public Color getForeground() {
+		return foreground;
+	}
+
+	public void setForeground(Color foreground) {
+		this.foreground = foreground;
+	}
+
+	public Font getFont() {
+		return font;
+	}
+
+	public void setFont(Font font) {
+		this.font = font;
+	}
+
+	public Icon getIcon() {
+		return icon;
+	}
+
+	public void setIcon(Icon icon) {
+		this.icon = icon;
+	}
+
+	public Icon getRolloverIcon() {
+		return rolloverIcon;
+	}
+
+	public void setRolloverIcon(Icon rolloverIcon) {
+		this.rolloverIcon = rolloverIcon;
+	}
+
+	public Icon getPressedIcon() {
+		return pressedIcon;
+	}
+
+	public void setPressedIcon(Icon pressedIcon) {
+		this.pressedIcon = pressedIcon;
 	}
 
 }

@@ -1,3 +1,5 @@
+import javax.swing.ImageIcon;
+
 import mgui.component.Button;
 import mgui.component.Component;
 import mgui.component.Frame;
@@ -28,8 +30,14 @@ class TestPanel extends Panel {
 		super(f,i,j,k,l,create);
 	}
 
-	Button btn1 = new Button(this, 0.5, 0.5, 100, 50, "test");
-	Button btn2 = new Button(this, 0, 0, 100, 50, "test2");
+	Button btn1, btn2;
+	{
+		Style style = Style.create(Style.BUTTON);
+		style.setIcon(new ImageIcon("1.gif"));
+		btn1 = new Button(this, 0.5, 0.5, 100, 50, "test", style);
+		btn2 = new Button(this, 0, 0, 100, 50, "test2");
+		//repaint();
+	}
 	
 	public void onClick(Component c) {
 		if (c == btn1) {
@@ -38,6 +46,7 @@ class TestPanel extends Panel {
 			new TestPanel2(Demo.f,0,0,544,416);
 		}
 	}
+
 }
 
 class TestPanel2 extends Panel {
